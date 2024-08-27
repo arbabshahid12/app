@@ -1,0 +1,29 @@
+type Employee {
+    id: ID!
+    email: String!
+    firstname: String!
+    lastname: String!
+    locked: Boolean!
+    role: String!
+}
+
+ArtWork type
+type ArtWork {
+    id: ID!
+    title: String!
+    yearOfCompletion: Int!
+    price: Float!
+    sold: Boolean!
+}
+
+# Define queries
+type Query {
+    allEmployees: [Employee!]!
+    findEmployeeById(id: ID!): Employee
+}
+
+# Define mutations
+type Mutation {
+    deleteEmployee(id: ID!): Boolean
+    addArtWork(title: String!, yearOfCompletion: Int!, price: Float!, sold: Boolean!): ArtWork!
+}
